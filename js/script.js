@@ -1,32 +1,38 @@
 // FSJS - Random Quote Generator
 let refresh= ''
 // Create the array of quote objects and name it quotes
+var html = "";
+var red;
+var green;
+var blue;
+var rgbColor;
 var quotes = [
   {quote: "I am Groot",
-source: Baby Groot,
+source: "Baby Groot",
 year: 2017},
 
 {quote:"Kamehameha",
-source: Goku,
+source: "Goku",
 year: 2005},
 
 {quote:"Avada Kedavra",
-source: Voldemort,
+source: "Voldemort",
 year: 2011},
 
 {quote:"I find your lack of faith disturbing",
-source: Darth Vader,
+source: "Darth Vader",
 year: 1977},
 
 {quote: "to infinity and beyond!",
-source: Buzz Lightyear,
+source: "Buzz Lightyear",
 year: 1995},
 ];
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote() {
-  var randomQuote= Math.floor(Math.random() * quotes.length)//variable will access the random quotes.
+  //variable will access the random quotes.
+  var randomQuote= Math.floor(Math.random() * quotes.length)
   return (randomQuote);
 }
 
@@ -34,13 +40,21 @@ function getRandomQuote() {
 // Create the printQuote funtion and name it printQuote
 
 function printQuote (){
-  var words = $(quotes.qoute); //the qoute itself
-  var source = $(quotes.source); // the source of the quote
-  var year = $(quotes.year); // the year the quote was said
-document.write(randomQuote);//Writes random quote
+  var newQuote= getRandomQuote();
+  //the qoute itself
+  var words = $(newQuote.qoute);
+  // the source of the quote
+  var origin = $(newQuote.source);
+  // the year the quote was said
+  var year = $(newQuote.year);
+<p class= "quote"> [words.quote]</p>
+<p class= "source"> [origin.source]
+<span class= "year"> [year.year]</span>
+</p>
+
 
 }
-getRandomQuote();//Calls getRandomQuoteandom function
+
 
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
