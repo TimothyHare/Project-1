@@ -2,9 +2,9 @@
 let refresh= ''
 // Create the array of quote objects and name it quotes
 var html = "";
-var color= [ "red";
-var "green";
-var "blue";
+var colors= [ "red",
+"green",
+ "blue",
 ];
 var quotes = [
   {quote: "I am Groot",
@@ -47,16 +47,18 @@ function printQuote (){
   var newQuote= getRandomQuote();
   var newColor= getRandomColor();
   //the qoute itself
-  var words = $(newQuote.qoute);
+  var words = newQuote.qoute;
   // the source of the quote
-  var origin = $(newQuote.source);
+  var origin = newQuote.source;
   // the year the quote was said
-  var year = $(newQuote.year);
-<p class= "quote"> [words.quote]</p>
-<p class= "source"> [origin.source]
-<span class= "year"> [year.year]</span>
-</p>
+  var year = newQuote.year;
+
+  var stringOfQuoteProperties = `<p class= "quote"> ${words.quote}</p>
+<p class= "source"> ${origin.source}
+<span class= "year"> ${year.year}</span>
+</p>`
 }
+document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
 
 function changeColor(newColor){
 ("body").css ({backgroundColor: colors[newColor]});
