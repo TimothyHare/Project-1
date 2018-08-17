@@ -2,10 +2,10 @@
 let refresh= ''
 // Create the array of quote objects and name it quotes
 var html = "";
-var red;
-var green;
-var blue;
-var rgbColor;
+var color= [ "red";
+var "green";
+var "blue";
+];
 var quotes = [
   {quote: "I am Groot",
 source: "Baby Groot",
@@ -35,12 +35,17 @@ function getRandomQuote() {
   var randomQuote= Math.floor(Math.random() * quotes.length)
   return (randomQuote);
 }
+function getRandomColor (){
+var randomColor = Math.floor(Math.random()* colors.length)
+return(randomColor);
 
+}
 
 // Create the printQuote funtion and name it printQuote
 
 function printQuote (){
   var newQuote= getRandomQuote();
+  var newColor= getRandomColor();
   //the qoute itself
   var words = $(newQuote.qoute);
   // the source of the quote
@@ -51,7 +56,11 @@ function printQuote (){
 <p class= "source"> [origin.source]
 <span class= "year"> [year.year]</span>
 </p>
+}
 
+function changeColor(newColor){
+("body").css ({backgroundColor: colors[newColor]});
+return (newColor);
 
 }
 
