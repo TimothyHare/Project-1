@@ -32,12 +32,13 @@ year: 1995},
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote(array) {
   //variable will access the random quotes.
-  var randomQuote= quote[Math.floor(Math.random() * quotes.length)];
+  var randomQuote= quote[Math.floor(Math.random() * quote.length)];
   return (randomQuote);
 }
 function getRandomColor (){
-var randomColor = color[Math.floor(Math.random()* colors.length)];
-return(randomColor);
+var randomColor = colors[Math.floor(Math.random()* colors.length)];
+var backgroundColor = colors[randomColor];
+return(backgroundColor);
 
 }
 
@@ -45,7 +46,7 @@ return(randomColor);
 
 function printQuote (){
   var newQuote= getRandomQuote(quote);
-  var newColor= getRandomColor();
+  var newColor= getRandomColor(colors);
   //the qoute itself
   var words = newQuote.qoute;
   // the source of the quote
@@ -57,6 +58,8 @@ function printQuote (){
 <p class= "source"> ${newQuote.source}
 <span class= "year"> ${newQuote.year}</span>
 </p>`
+console.log(words);
+
 document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
 }
 
