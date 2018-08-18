@@ -6,7 +6,7 @@ var colors= [ "red",
 "green",
  "blue",
 ];
-var quotes = [
+var quote = [
   {quote: "I am Groot",
 source: "Baby Groot",
 year: 2017},
@@ -30,13 +30,13 @@ year: 1995},
 
 
 // Create the getRandomQuuote function and name it getRandomQuote
-function getRandomQuote() {
+function getRandomQuote(array) {
   //variable will access the random quotes.
-  var randomQuote= Math.floor(Math.random() * quotes.length)
+  var randomQuote= quote[Math.floor(Math.random() * quotes.length)];
   return (randomQuote);
 }
 function getRandomColor (){
-var randomColor = Math.floor(Math.random()* colors.length)
+var randomColor = color[Math.floor(Math.random()* colors.length)];
 return(randomColor);
 
 }
@@ -44,7 +44,7 @@ return(randomColor);
 // Create the printQuote funtion and name it printQuote
 
 function printQuote (){
-  var newQuote= getRandomQuote();
+  var newQuote= getRandomQuote(quote);
   var newColor= getRandomColor();
   //the qoute itself
   var words = newQuote.qoute;
@@ -53,12 +53,13 @@ function printQuote (){
   // the year the quote was said
   var year = newQuote.year;
 
-  var stringOfQuoteProperties = `<p class= "quote"> ${words.quote}</p>
-<p class= "source"> ${origin.source}
-<span class= "year"> ${year.year}</span>
+  var stringOfQuoteProperties = `<p class= "quote"> ${newQuote.quote}</p>
+<p class= "source"> ${newQuote.source}
+<span class= "year"> ${newQuote.year}</span>
 </p>`
-}
 document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
+}
+
 
 function changeColor(newColor){
 ("body").css ({backgroundColor: colors[newColor]});
